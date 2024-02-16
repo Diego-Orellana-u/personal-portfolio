@@ -1,3 +1,21 @@
-<footer class="py-20">
-    Aquí va el footer
+---
+import GithubIcon from '../components/icons/Github.astro';
+import LinkedinIcon from '../components/icons/Linkedin.astro';
+import MailIcon from '../components/icons/Mail.astro';
+---
+
+<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded opacity-75">
+  <nav class="flex gap-8 justify-center">
+    <a class="link link-hover">Experiencia</a>
+    <a class="link link-hover">Proyectos</a>
+    <a class="link link-hover">Contacto</a>
+    <a class="link link-hover">Sobre Mí</a>
+  </nav> 
+  <nav>
+    <div class="flex gap-8 justify-center py-10 pb-5">
+      <a href="https://github.com/Diego-Orellana-u"><GithubIcon class="size-4 md:size-6"/></a>
+      <a href="https://linkedin.com"><LinkedinIcon class="size-4 md:size-6"/></a>
+      <a href="mailto:diego.orellana.git@gmail.com"><MailIcon class="size-4 md:size-6"/></a>
+    </div>
+  </nav> 
 </footer>
