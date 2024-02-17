@@ -31,9 +31,9 @@ import Projects from '../components/Projects.astro';
 				</a>
 			</h1>
 
-			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
-				<span>+3 años de experiencia.</span> <span class="text-yellow-200/90 ">Desarrollador Full Stack.</span> 
-				<span class="opacity-75">Especializado en crear soluciones optimas.</span>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-balance max-w-[700px]">
+				<span>+3 años de experiencia.</span> <span class="text-yellow-200 ">Desarrollador Full Stack.</span> 
+				<span>Especializado en crear soluciones optimas.</span>
 			</h2>
 
 			<nav class="flex gap-4 mt-6 flex-wrap">
@@ -66,6 +66,13 @@ import Projects from '../components/Projects.astro';
 				Proyectos
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center text-black/80 dark:text-white/80">
+				<CodeIcon class="size-7 self-center" />
+				Sobre Mí
+			</h2>
 		</SectionContainer>
 	</main>
 </Layout>
