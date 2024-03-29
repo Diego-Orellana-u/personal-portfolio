@@ -9,6 +9,7 @@ import Briefcase from '../components/icons/Briefcase.astro';
 import MailIcon from '../components/icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
+import AboutMe from '../components/AboutMe.astro';
 ---
 
 <Layout title="Diego Orellana - Desarrollador y Programador Full Stack" 
@@ -69,10 +70,11 @@ import Projects from '../components/Projects.astro';
 		</SectionContainer>
 
 		<SectionContainer id="sobre-mi">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center text-black/80 dark:text-white/80">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2">
 				<CodeIcon class="size-7 self-center" />
 				Sobre Mí
 			</h2>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 </Layout>

@@ -1,7 +1,8 @@
 ---
-
+import SocialPill from '../components/SocialPill.astro';
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import GithubIcon from '../components/icons/Github.astro';
 
 const TAGS = {
   NEXT: {
@@ -21,31 +22,80 @@ const PROJECTS = [
         title: 'Letelier ― E-commerce de antigüedades',
         description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         link: 'https://letelier.art',
-        github: 'https://github.com/Diego-Orellana-u',
+        github: 'https://github.com/Diego-Orellana-u/letelier-website-theme',
         image: '/projects/svgl.webp',
         tags: [TAGS.NEXT, TAGS.TAILWIND]
-    }
+    },
 ]
 ---
 
-{
-    PROJECTS.map(({title, description, tags, image}) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-2">
-                {
-                    tags.map(tag => (
-                        <li>
-                            <span class={`flex gap-x-2 border border-white/10 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                                <tag.icon class="size-4" />
-                                {tag.name}
-                            </span>
-                        </li>
-                    ))
-                }
-            </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt="Captura de pantalla del proyecto"/>
-        </article>
-    ))
-}
+<section class="flex flex-col gap-y-16">
+    {
+        PROJECTS.map(({title, description, tags, image, link, github}) => (
+            <article>
+                <h3 class="text-2xl font-semibold text-yellow-200/90 mb-2">{title}</h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex gap-x-2 flex-row mb-2">
+                    {
+                        tags.map(tag => (
+                            <li>
+                                <span class={`flex gap-x-2 border border-white/10 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                                    <tag.icon class="size-4" />
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <img class="rounded shadow-2xl shadow-white/10" src={image} alt="Captura de pantalla del proyecto"/>
+                <div class="flex justify-center mt-8 gap-x-9">
+                    {
+                        github && 
+                        <SocialPill href={github}>
+                            <GithubIcon class="size-4 md:size-6"/>
+                            Ver Código{" "}
+                            <svg
+                                class="w-5 icon icon-tabler icon-tabler-chevron-right"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <>
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M9 6l6 6l-6 6" />
+                                </>
+                            </svg>
+                        </SocialPill>   
+                    }
+                    {
+                        link &&
+                        <SocialPill href={link}>
+                            Ver Proyecto{" "}
+                            <svg
+                                class="w-5 icon icon-tabler icon-tabler-chevron-right"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <>
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M9 6l6 6l-6 6" />
+                                </>
+                            </svg>
+                        </SocialPill>   
+                    }
+                </div>
+            </article>
+        ))
+    }
+</section>
